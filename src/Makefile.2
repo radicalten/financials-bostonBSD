@@ -1,5 +1,5 @@
 CC=cc
-TARGET=myapp
+TARGET = myapp
 
 MAIN_SRC=financials.c config/config.c
 LIB_INT_SRC=multicurl/multicurl.c json/json.c sqlite/sqlite.c resources/resources.c
@@ -19,5 +19,5 @@ WARN=-Wall -Wextra -Wno-missing-field-initializers -DGLIB_DISABLE_DEPRECATION_WA
 all: $(TARGET)
 
 $(TARGET):
-	$(CC) -O3 -s -lm -o $@ $(SRC) $(CFLAGS) $(LIBS) $(WARN)
+	$(CC) -O3 -s -lm -o $(TARGET) $(SRC) $(CFLAGS) $(LIBS) $(WARN)
 
