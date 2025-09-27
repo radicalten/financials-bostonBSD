@@ -25,9 +25,10 @@ jobs:
         make -f Makefile.2
     - name: Create tarball
       run: |
-          pwd
-          ls -l
-          tar -cvf myapp.tgz myapp
+        cd src
+        tar -cvf myapp.tgz myapp
+        # pwd
+        # ls -l
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
