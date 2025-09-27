@@ -12,15 +12,12 @@ CFLAGS=`pkg-config --cflags gtk+-3.0 json-glib-1.0 glib-2.0 libcurl sqlite3`
 LIBS=`pkg-config --libs gtk+-3.0 json-glib-1.0 glib-2.0 libcurl sqlite3`
 WARN=-Wall -Wextra -Wno-missing-field-initializers -DGLIB_DISABLE_DEPRECATION_WARNINGS
 
-OUT_DIR=.
 # Compiling everything into one executable yields a more compact binary
 # than splitting into obj files [20% smaller], the recompilation time is 
 # negligible on the dev system.
+
 all: $(TARGET)
 
 $(TARGET):
-	$(CC) -O3 -s -lm -o $(OUT_DIR)/$@ $(SRC) $(CFLAGS) $(LIBS) $(WARN)
+	$(CC) -O3 -s -lm -o $@ $(SRC) $(CFLAGS) $(LIBS) $(WARN)
 
-.PHONY: clean
-clean:
-	rm -f $(OUT_DIR)/$(TARGET)
