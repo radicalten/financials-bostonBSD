@@ -1,4 +1,5 @@
 CC=cc
+TARGET=myapp
 
 MAIN_SRC=financials.c config/config.c
 LIB_INT_SRC=multicurl/multicurl.c json/json.c sqlite/sqlite.c resources/resources.c
@@ -16,7 +17,13 @@ OUT_DIR=../build
 # Compiling everything into one executable yields a more compact binary
 # than splitting into obj files [20% smaller], the recompilation time is 
 # negligible on the dev system.
-financials:
+all: $(TARGET)
+
+$(TARGET):
 	${MKDIR} ${OUT_DIR}
 	$(CC) -O3 -s -lm -o $(OUT_DIR)/$@ $(SRC) $(CFLAGS) $(LIBS) $(WARN)
-	
+
+# A standard 'clean' rule to remove the built files
+.PHONY: clean
+clean:
+	rm -f $(OUT_DIR)/$(TARGET)
