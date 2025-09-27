@@ -22,7 +22,7 @@ jobs:
     - name: Compile
       run: |
         cd src
-        make -f Makefile
+        make -f Makefile.2
     - name: Create tarball
       run: |
           tar -cvf myapp.tgz myapp
