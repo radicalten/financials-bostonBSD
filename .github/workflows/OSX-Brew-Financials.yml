@@ -21,10 +21,10 @@ jobs:
         make -f Makefile
     - name: Create tarball
       run: |
-          tar -cvf fixGB.tgz fixGB
+          tar -cvf myapp.tgz myapp
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
         name: Artifact
         path: |
-          ./fixGB.tgz
+          .
