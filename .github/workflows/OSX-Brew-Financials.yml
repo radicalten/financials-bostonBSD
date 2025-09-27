@@ -14,7 +14,7 @@ jobs:
       uses: Homebrew/actions/setup-homebrew@master
     - name: Install Financials Dependencies
       run: |
-        brew install gtk+3 json-glib glibc libcurl sqlite3
+        brew install gtk+3 json-glib glibc curl sqlite3
     - name: Compile
       run: |
         cd src
