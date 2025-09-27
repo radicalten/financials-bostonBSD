@@ -18,5 +18,5 @@ OUT_DIR=../build
 # negligible on the dev system.
 financials:
 	${MKDIR} ${OUT_DIR}
-	$(CC) -Ofast -s -lm -o $(OUT_DIR)/$@ $(SRC) $(CFLAGS) $(LIBS) $(WARN)
+	$(CC) -O3 -s -lm -o $(OUT_DIR)/$@ $(SRC) $(CFLAGS) $(LIBS) $(WARN)
 	
