@@ -29,6 +29,8 @@ jobs:
         tar -cvf myapp.tgz myapp
         # pwd
         # ls -l
+        # pwd prints working directory
+        # ls -l lists files
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
